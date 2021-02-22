@@ -323,8 +323,8 @@ export default {
          * CreatedBy: TLKhanh(19/2/2021)
          */
 
-        loadData(data) {
-            this.$emit('reloadData', data)
+        loadData() {
+            this.$emit('loadData')
         },
         /**
          * remove validate
@@ -401,16 +401,10 @@ export default {
                         'http://localhost:52690/api/v1/Employees',
                         this.employee
                     )
-                    try {
-                        // load lại dữ liệu khi thêm mới xong
-                        var response = await axios.get(
-                            'http://localhost:52690/api/v1/Employees'
-                        )
-                        this.$emit('reloadData', response.data)
-                        this.$emit('closePopup', true)
-                    } catch (error) {
-                        alert(error.response.data.UserMsg)
-                    }
+                    this.$emit('closePopup', true)
+                    this.$emit('loadNewEmployee')
+                    // load lại dữ liệu khi thêm mới xong
+                    this.$emit('loadData')
                 } catch (error) {
                     this.text = error.response.data.UserMsg
                     this.isHideDialogAlert = false
@@ -423,13 +417,9 @@ export default {
                         `http://localhost:52690/api/v1/Employees/${employeeId}`,
                         this.employee
                     )
-                    axios
-                        .get('http://localhost:52690/api/v1/Employees')
-                        .then((res) => {
-                            alert('Cập nhật thông tin thành công!')
+                    alert('Cập nhật thông tin thành công!')
 
-                            this.$emit('reloadData', res.data)
-                        })
+                    this.$emit('loadData')
                 } catch (error) {
                     console.log(error)
                 }

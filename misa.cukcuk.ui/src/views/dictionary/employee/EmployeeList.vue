@@ -5,7 +5,8 @@
             id="m"
             @closePopup="closePopup"
             :isHide="isHideParent"
-            @reloadData="employees = $event"
+            @loadData="loadData"
+            @loadNewEmployee="loadNewEmployee"
             :data="employee"
         />
 
@@ -204,7 +205,7 @@
             :isHide="isHideDialogConfirm"
             :message="message"
             @closeDialogConfirm="isHideDialogConfirm = $event"
-            @loadData="employees = $event"
+            @loadData="loadData"
         />
     </div>
 </template>
@@ -234,6 +235,35 @@ export default {
         }
     },
     methods: {
+        /**
+         * Hàm bật lại dialog khi thêm mới
+         */
+        loadNewEmployee() {
+            this.btnAddClick()
+        },
+        /**
+         * Hàm thực hiện load lại dữ liệu
+         * CreatedBy: TLKhanh(22/2/2021)
+         */
+        async loadData() {
+            try {
+                var workStatuses = await axios.get(
+                    'http://localhost:52690/api/v1/workstatuss'
+                )
+                this.workStatuses = workStatuses.data
+                var response = await axios.get(
+                    'http://localhost:52690/api/v1/Employees'
+                )
+                this.employees = response.data
+                // Xử lý slect row đầu tiên
+                setTimeout(() => {
+                    var tbody = document.querySelector('tbody')
+                    tbody.firstChild.classList.add('row-selected')
+                }, 0)
+            } catch (error) {
+                console.log(error)
+            }
+        },
         /**
          * Hàm focus button đầu tiên của Dialog
          */
@@ -359,10 +389,11 @@ export default {
             var date = new Date(d)
             var day = date.getDate() > 9 ? date.getDate() : '0' + date.getDate()
             var month =
-                date.getMonth() > 10
+                date.getMonth() + 1 > 9
                     ? date.getMonth() + 1
                     : '0' + (date.getMonth() + 1)
             var year = date.getFullYear()
+
             return `${day}/${month}/${year}`
         },
         /**
@@ -426,23 +457,7 @@ export default {
         /**
          * Gọi api lấy dữ liệu
          */
-        try {
-            var workStatuses = await axios.get(
-                'http://localhost:52690/api/v1/workstatuss'
-            )
-            this.workStatuses = workStatuses.data
-            var response = await axios.get(
-                'http://localhost:52690/api/v1/Employees'
-            )
-            this.employees = response.data
-            // Xử lý slect row đầu tiên
-            setTimeout(() => {
-                var tbody = document.querySelector('tbody')
-                tbody.firstChild.classList.add('row-selected')
-            }, 0)
-        } catch (error) {
-            console.log(error)
-        }
+        this.loadData()
 
         /**
          * Sử lý key event

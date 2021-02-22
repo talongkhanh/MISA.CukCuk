@@ -58,14 +58,8 @@ export default {
                 await axios.delete(
                     `http://localhost:52690/api/v1/Employees/${this.employeeId}`
                 )
-                try {
-                    var employeeLists = await axios.get(
-                        'http://localhost:52690/api/v1/Employees'
-                    )
-                    this.$emit('loadData', employeeLists.data)
-                } catch (error) {
-                    console.log(error)
-                }
+
+                this.$emit('loadData')
             } catch (error) {
                 console.log(error)
             }
