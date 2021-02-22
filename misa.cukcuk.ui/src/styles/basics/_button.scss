@@ -1,0 +1,52 @@
+/* Các button dùng chung */
+
+.m-btn {
+    outline: none;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    padding: 0 16px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.m-btn:focus {
+    border-color: #0072bc;
+    background-color: #e9f1eb;
+}
+
+.m-btn:hover {
+    border-color: #0072bc;
+    background-color: #e9f1eb;
+}
+
+.m-btn__icon {
+    outline: none;
+    display: flex;
+    padding: 2px 4px;
+    align-items: center;
+    cursor: pointer;
+    font-size: 12px;
+    border: none;
+    border: 1px solid transparent;
+}
+
+.m-btn__icon:focus {
+    border-color: #0072bc;
+    background-color: #fff;
+}
+
+.m-btn__icon:hover {
+    border-color: #0072bc;
+    background-color: #fff;
+}
+
+.m-icon {
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    margin-right: 4px;
+    background-image: url('assets/images/IconSprite.png');
+}

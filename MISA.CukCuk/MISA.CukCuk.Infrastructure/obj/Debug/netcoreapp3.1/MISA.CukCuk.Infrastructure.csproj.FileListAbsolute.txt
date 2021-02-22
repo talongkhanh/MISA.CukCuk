@@ -1,0 +1,12 @@
+D:\HocTapMISA\Fresher\MISA.CukCuk\MISA.CukCuk.Infrastructure\bin\Debug\netcoreapp3.1\MISA.CukCuk.Core.dll
+D:\HocTapMISA\Fresher\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.csprojAssemblyReference.cache
+D:\HocTapMISA\Fresher\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.AssemblyInfoInputs.cache
+D:\HocTapMISA\Fresher\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.AssemblyInfo.cs
+D:\HocTapMISA\Fresher\MISA.CukCuk\MISA.CukCuk.Infrastructure\bin\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.deps.json
+D:\HocTapMISA\Fresher\MISA.CukCuk\MISA.CukCuk.Infrastructure\bin\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.dll
+D:\HocTapMISA\Fresher\MISA.CukCuk\MISA.CukCuk.Infrastructure\bin\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.pdb
+D:\HocTapMISA\Fresher\MISA.CukCuk\MISA.CukCuk.Infrastructure\bin\Debug\netcoreapp3.1\MISA.CukCuk.Core.pdb
+D:\HocTapMISA\Fresher\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.csproj.CoreCompileInputs.cache
+D:\HocTapMISA\Fresher\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.csproj.CopyComplete
+D:\HocTapMISA\Fresher\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.dll
+D:\HocTapMISA\Fresher\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.pdb
