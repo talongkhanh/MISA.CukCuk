@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\HocTapMISA\\Fresher\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj",
+      "projectUniqueName": "D:\\HocTapMISA\\Khanh\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj",
       "projectName": "MISA.CukCuk.Core",
-      "projectPath": "D:\\HocTapMISA\\Fresher\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj",
+      "projectPath": "D:\\HocTapMISA\\Khanh\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj",
       "packagesPath": "C:\\Users\\longk\\.nuget\\packages\\",
-      "outputPath": "D:\\HocTapMISA\\Fresher\\MISA.CukCuk\\MISA.CukCuk.Core\\obj\\",
+      "outputPath": "D:\\HocTapMISA\\Khanh\\MISA.CukCuk\\MISA.CukCuk.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\longk\\AppData\\Roaming\\NuGet\\NuGet.Config",

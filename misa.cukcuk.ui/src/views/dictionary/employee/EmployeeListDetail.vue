@@ -174,7 +174,7 @@
                                 >
                                     <input
                                         @keydown.enter="focusRadio($event)"
-                                        class="select-rule"
+                                        class="input-default select-rule"
                                         type="radio"
                                         name="rule"
                                         :id="rule.RuleId"
@@ -253,6 +253,7 @@
             :isHide="isHideDialogAlert"
             :text="text"
             @closeDialog="isHideDialogAlert = $event"
+            @focusInput="focusInput()"
         />
         <DialogConfirm
             ref="dialogConfirm"
@@ -293,11 +294,19 @@ export default {
     },
     methods: {
         /**
+         * focus ô mã nhân viên khi thông tin gửi đi không hợp lệ
+         * createdBy: TLKhanh(22/2/2021)
+         */
+        focusInput() {
+            this.$refs.employeeCode.focus()
+        },
+        /**
          * Hàm focus radio button khi nhấn enter
          * createdBy: TLKhanh(21/2/2021)
          */
         focusRadio(event) {
             event.target.checked = true
+            this.employee.RuleId = event.target.value
         },
         /**
          * Hàm focus button đầu tiên của Dialog
@@ -363,6 +372,8 @@ export default {
         async saveEmployee() {
             /**
              * Xử lý validate dữ liệu khi cất
+             * i là các trương cần validate
+             * 0: mã nhân viên, 1 email, 2 số điện thoại, 3 họ tên, 6 số cmt, 9 trạng thái làm việc
              */
 
             var inputs = document.querySelectorAll('.input-default')
@@ -390,14 +401,16 @@ export default {
                         'http://localhost:52690/api/v1/Employees',
                         this.employee
                     )
-
-                    axios
-                        .get('http://localhost:52690/api/v1/Employees')
-                        .then((res) => {
-                            this.$emit('reloadData', res.data)
-                            this.$emit('closePopup', true)
-                        })
-                        .catch((err) => alert(err.response.data.UserMsg))
+                    try {
+                        // load lại dữ liệu khi thêm mới xong
+                        var response = await axios.get(
+                            'http://localhost:52690/api/v1/Employees'
+                        )
+                        this.$emit('reloadData', response.data)
+                        this.$emit('closePopup', true)
+                    } catch (error) {
+                        alert(error.response.data.UserMsg)
+                    }
                 } catch (error) {
                     this.text = error.response.data.UserMsg
                     this.isHideDialogAlert = false
@@ -455,6 +468,8 @@ export default {
 
         /**
          * Sử lý validate dữ liệu khi blur input
+         * i là các trương cần validate
+         * 0: mã nhân viên, 1 email, 2 số điện thoại, 3 họ tên, 6 số cmt, 9 trạng thái làm việc
          * CreatedBy: TLKhanh(19/2/2021)
          */
 

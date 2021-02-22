@@ -147,6 +147,10 @@
     cursor: pointer;
 }
 
+.select-rule:focus {
+    outline: 1px solid #0072bc;
+}
+
 // avatar box
 .avatar-box {
     width: 134px;

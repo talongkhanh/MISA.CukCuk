@@ -275,25 +275,25 @@ export default {
          * Hàm mở dialog khi click button add
          * CreatedBy TLKhanh (19/2/2021)
          */
-        btnAddClick() {
-            axios
-                .get('http://localhost:52690/api/v1/Employees/max-code')
-                .then((response) => {
-                    var code = response.data.EmployeeCode
-                    var codeLength = code.length
-                    var num = (parseInt(code.split('NV')[1]) + 1).toString()
-                    var newCode = 'NV'
-                    for (var i = 0; i < codeLength - num.length - 2; i++) {
-                        newCode = newCode + '0'
-                    }
-                    newCode = newCode + num
-                    this.employee = {
-                        EmployeeCode: newCode,
-                    }
-                })
-                .catch(function(error) {
-                    console.log(error)
-                })
+        async btnAddClick() {
+            try {
+                var response = await axios.get(
+                    'http://localhost:52690/api/v1/Employees/max-code'
+                )
+                var code = response.data.EmployeeCode
+                var codeLength = code.length
+                var num = (parseInt(code.split('NV')[1]) + 1).toString()
+                var newCode = 'NV'
+                for (var i = 0; i < codeLength - num.length - 2; i++) {
+                    newCode = newCode + '0'
+                }
+                newCode = newCode + num
+                this.employee = {
+                    EmployeeCode: newCode,
+                }
+            } catch (error) {
+                console.log(error)
+            }
             this.isHideParent = false
             this.focusInput()
         },
@@ -369,7 +369,7 @@ export default {
          * Hàm sửa thông tin nhân viên
          * CreatedBy: TLKhanh(19/2/2021)
          */
-        updateEmployee() {
+        async updateEmployee() {
             var rowSelected = document.querySelector('.row-selected')
 
             if (!rowSelected) {
@@ -378,23 +378,23 @@ export default {
             }
 
             var employeeId = rowSelected.getAttribute('data-id')
-            axios
-                .get(`http://localhost:52690/api/v1/Employees/${employeeId}`)
-                .then((response) => {
-                    var employee = response.data
-                    for (var key in employee) {
-                        if (
-                            key.toLowerCase().indexOf('date') !== -1 &&
-                            employee[key] != null
-                        ) {
-                            employee[key] = employee[key].slice(0, 10)
-                        }
+            try {
+                var response = await axios.get(
+                    `http://localhost:52690/api/v1/Employees/${employeeId}`
+                )
+                var employee = response.data
+                for (var key in employee) {
+                    if (
+                        key.toLowerCase().indexOf('date') !== -1 &&
+                        employee[key] != null
+                    ) {
+                        employee[key] = employee[key].slice(0, 10)
                     }
-                    this.employee = employee
-                })
-                .catch((error) => {
-                    console.log(error)
-                })
+                }
+                this.employee = employee
+            } catch (error) {
+                console.log(error)
+            }
             this.isHideParent = false
             this.focusInput()
         },

@@ -1416,11 +1416,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\HocTapMISA\\Fresher\\MISA.CukCuk\\MISA.CukCuk\\MISA.CukCuk.csproj",
+      "projectUniqueName": "D:\\HocTapMISA\\Khanh\\MISA.CukCuk\\MISA.CukCuk\\MISA.CukCuk.csproj",
       "projectName": "MISA.CukCuk",
-      "projectPath": "D:\\HocTapMISA\\Fresher\\MISA.CukCuk\\MISA.CukCuk\\MISA.CukCuk.csproj",
+      "projectPath": "D:\\HocTapMISA\\Khanh\\MISA.CukCuk\\MISA.CukCuk\\MISA.CukCuk.csproj",
       "packagesPath": "C:\\Users\\longk\\.nuget\\packages\\",
-      "outputPath": "D:\\HocTapMISA\\Fresher\\MISA.CukCuk\\MISA.CukCuk\\obj\\",
+      "outputPath": "D:\\HocTapMISA\\Khanh\\MISA.CukCuk\\MISA.CukCuk\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\longk\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1437,11 +1437,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\HocTapMISA\\Fresher\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj": {
-              "projectPath": "D:\\HocTapMISA\\Fresher\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj"
+            "D:\\HocTapMISA\\Khanh\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj": {
+              "projectPath": "D:\\HocTapMISA\\Khanh\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj"
             },
-            "D:\\HocTapMISA\\Fresher\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\MISA.CukCuk.Infrastructure.csproj": {
-              "projectPath": "D:\\HocTapMISA\\Fresher\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\MISA.CukCuk.Infrastructure.csproj"
+            "D:\\HocTapMISA\\Khanh\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\MISA.CukCuk.Infrastructure.csproj": {
+              "projectPath": "D:\\HocTapMISA\\Khanh\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\MISA.CukCuk.Infrastructure.csproj"
             }
           }
         }
