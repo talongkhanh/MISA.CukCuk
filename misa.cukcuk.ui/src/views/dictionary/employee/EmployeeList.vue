@@ -243,11 +243,6 @@ export default {
           "http://localhost:52690/api/v1/Employees"
         );
         this.employees = response.data;
-        // Xử lý slect row đầu tiên
-        setTimeout(() => {
-          var tbody = document.querySelector("tbody");
-          tbody.firstChild.classList.add("row-selected");
-        }, 0);
       } catch (error) {
         console.log(error);
       }
@@ -434,6 +429,11 @@ export default {
   },
   //Hàm gọi api lấy dữ liệu
   async mounted() {
+    // Xử lý slect row đầu tiên
+    setTimeout(() => {
+      var tbody = document.querySelector("tbody");
+      tbody.firstChild.classList.add("row-selected");
+    }, 0);
     /**
      * Gọi api lấy dữ liệu
      */
