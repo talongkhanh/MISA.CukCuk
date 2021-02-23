@@ -365,6 +365,7 @@ export default {
      * CreatedBy TLKhanh (19/2/2021)
      */
     formatDate(d) {
+      if (d == null) return "Chưa nhập";
       var date = new Date(d);
       var day = date.getDate() > 9 ? date.getDate() : "0" + date.getDate();
       var month =

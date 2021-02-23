@@ -23,7 +23,7 @@
             <div class="m-icon m-icon--duplicate"></div>
             <span>Nhân bản</span>
           </button>
-          <button class="m-btn__icon">
+          <button :class="{ isDisabled: isDisabled }" class="m-btn__icon">
             <div class="m-icon m-icon--view"></div>
             <span>Xem</span>
           </button>
@@ -514,6 +514,9 @@ export default {
     employee() {
       return this.data;
     },
+    isDisabled() {
+      return !(this.employeeId != "");
+    },
   },
 };
 </script>
@@ -521,5 +524,12 @@ export default {
 <style scoped>
 .isHide {
   display: none;
+}
+.isDisabled {
+  opacity: 0.2 !important;
+  cursor: default !important;
+}
+.isDisabled:hover {
+  border-color: transparent !important;
 }
 </style>
