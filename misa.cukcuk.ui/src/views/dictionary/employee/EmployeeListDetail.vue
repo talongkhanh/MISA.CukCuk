@@ -225,16 +225,6 @@
                                 >
                             </select>
                         </div>
-                        <div class="row">
-                            <label title="Email">Mức lương</label>
-                            <input
-                                @keydown="onlyNumber($event)"
-                                id="txtSalary"
-                                type="text"
-                                class="input-default input--middle"
-                                v-model="employee.Salary"
-                            />
-                        </div>
                     </div>
                     <div class="group-right">
                         <div class="avatar-box">
