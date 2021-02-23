@@ -34,3 +34,15 @@ C:\tlkhanh\MISA.CukCuk\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcorea
 C:\tlkhanh\MISA.CukCuk\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.csproj.CopyComplete
 C:\tlkhanh\MISA.CukCuk\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.dll
 C:\tlkhanh\MISA.CukCuk\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.pdb
+D:\New folder\MISA.CukCuk\MISA.CukCuk\MISA.CukCuk.Infrastructure\bin\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.deps.json
+D:\New folder\MISA.CukCuk\MISA.CukCuk\MISA.CukCuk.Infrastructure\bin\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.dll
+D:\New folder\MISA.CukCuk\MISA.CukCuk\MISA.CukCuk.Infrastructure\bin\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.pdb
+D:\New folder\MISA.CukCuk\MISA.CukCuk\MISA.CukCuk.Infrastructure\bin\Debug\netcoreapp3.1\MISA.CukCuk.Core.dll
+D:\New folder\MISA.CukCuk\MISA.CukCuk\MISA.CukCuk.Infrastructure\bin\Debug\netcoreapp3.1\MISA.CukCuk.Core.pdb
+D:\New folder\MISA.CukCuk\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.csprojAssemblyReference.cache
+D:\New folder\MISA.CukCuk\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.AssemblyInfoInputs.cache
+D:\New folder\MISA.CukCuk\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.AssemblyInfo.cs
+D:\New folder\MISA.CukCuk\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.csproj.CoreCompileInputs.cache
+D:\New folder\MISA.CukCuk\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.csproj.CopyComplete
+D:\New folder\MISA.CukCuk\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.dll
+D:\New folder\MISA.CukCuk\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.pdb

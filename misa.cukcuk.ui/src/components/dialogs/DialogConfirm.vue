@@ -59,7 +59,7 @@ export default {
                     `http://localhost:52690/api/v1/Employees/${this.employeeId}`
                 )
 
-                this.$emit('loadData')
+                this.$emit('onEmployeeDelete', this.employeeId)
             } catch (error) {
                 console.log(error)
             }
