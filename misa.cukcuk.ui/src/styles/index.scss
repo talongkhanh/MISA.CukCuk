@@ -10,69 +10,72 @@
 @import "./basics/dialog";
 @import "./pages/employee";
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box !important;
-  font-family: TahomaCustom !important;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+    font-family: TahomaCustom !important;
 }
 
 html {
-  overflow-y: hidden;
+    overflow-y: hidden;
 }
 
 body {
-  box-sizing: inherit;
-  font-size: 13px !important;
+    box-sizing: inherit;
+    font-size: 13px !important;
 }
 
 @font-face {
-  font-family: TahomaCustom;
-  src: url("assets/fonts/Tahoma_Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
+    font-family: TahomaCustom;
+    src: url("assets/fonts/Tahoma_Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "fontello";
-  src: url("assets/fonts/fontello.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "fontello";
+    src: url("assets/fonts/fontello.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
 }
 
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
-  font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: 0.2em;
-  text-align: center;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1em;
-  margin-left: 0.2em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: 0.2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    margin-left: 0.2em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .ml-12px {
-  margin-left: 24px;
+    margin-left: 24px;
 }
 
 .mr-24px {
-  margin-right: 24px;
+    margin-right: 24px;
 }
 
 .notValid {
-  border-color: #f00 !important;
+    border-color: #f00 !important;
 }
+
 .isDisabled {
-  opacity: 0.2 !important;
-  cursor: default !important;
+    opacity: 0.2 !important;
+    cursor: default !important;
 }
+
 .isDisabled:hover {
-  border-color: transparent !important;
+    background-color: unset !important;
+    border-color: transparent !important;
 }
