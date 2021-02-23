@@ -42,7 +42,12 @@
     </div>
     <div class="employee-list__content">
       <div class="toolbar">
-        <button class="m-btn__icon" id="btnAdd" @click="btnAddClick">
+        <button
+          title="Ctrl + 1"
+          class="m-btn__icon"
+          id="btnAdd"
+          @click="btnAddClick"
+        >
           <div class="m-icon m-icon--add"></div>
           <span>Thêm</span>
         </button>
@@ -50,15 +55,20 @@
           <div class="m-icon m-icon--duplicate"></div>
           <span>Nhân bản</span>
         </button>
-        <button class="m-btn__icon" @click="updateEmployee()">
+        <button title="Ctrl + E" class="m-btn__icon" @click="updateEmployee()">
           <div class="m-icon m-icon--view"></div>
           <span>Xem</span>
         </button>
-        <button class="m-btn__icon" id="btnUpdate" @click="updateEmployee()">
+        <button
+          title="Ctrl + E"
+          class="m-btn__icon"
+          id="btnUpdate"
+          @click="updateEmployee()"
+        >
           <div class="m-icon m-icon--update"></div>
           <span>Sửa</span>
         </button>
-        <button class="m-btn__icon" @click="deleteEmployee()">
+        <button title="Ctrl + D" class="m-btn__icon" @click="deleteEmployee()">
           <div class="m-icon m-icon--delete"></div>
           <span>Xóa</span>
         </button>

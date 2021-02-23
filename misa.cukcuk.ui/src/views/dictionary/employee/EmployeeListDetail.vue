@@ -10,7 +10,12 @@
       </div>
       <div class="dialog-body">
         <div class="toolbar">
-          <button id="btnSave" class="m-btn__icon" @click="saveEmployee">
+          <button
+            title="Ctrl + S"
+            id="btnSave"
+            class="m-btn__icon"
+            @click="saveEmployee"
+          >
             <div class="m-icon m-icon--save"></div>
             <span>Cất</span>
           </button>
@@ -22,11 +27,11 @@
             <div class="m-icon m-icon--view"></div>
             <span>Xem</span>
           </button>
-          <button class="m-btn__icon" @click="saveEmployee">
+          <button title="Ctrl + S" class="m-btn__icon" @click="saveEmployee">
             <div class="m-icon m-icon--update"></div>
             <span>Sửa</span>
           </button>
-          <button class="m-btn__icon" @click="deleteEmployee">
+          <button title="Ctrl + D" class="m-btn__icon" @click="deleteEmployee">
             <div class="m-icon m-icon--delete"></div>
             <span>Xóa</span>
           </button>
