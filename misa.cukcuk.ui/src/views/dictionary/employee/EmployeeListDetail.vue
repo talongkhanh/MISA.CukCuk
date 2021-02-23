@@ -284,6 +284,7 @@ export default {
         !(
           (keyCode >= 48 && keyCode <= 57) ||
           keyCode == 8 ||
+          keyCode == 9 ||
           keyCode == 46 ||
           (keyCode >= 96 && keyCode <= 105)
         )
