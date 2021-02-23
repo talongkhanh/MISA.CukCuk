@@ -455,7 +455,7 @@ export default {
                     )
                     alert('Cập nhật thông tin thành công!')
 
-                    this.$emit('loadData')
+                    this.$emit('updateEmployee', this.employee, employeeId)
                 } catch (error) {
                     this.text = error.response.data.UserMsg
                     this.isHideDialogAlert = false

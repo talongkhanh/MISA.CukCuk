@@ -7,6 +7,8 @@
             :isHide="isHideParent"
             @onEmployeeDelete="onEmployeeDelete"
             @loadNewEmployee="loadNewEmployee"
+            @updateEmployee="updateEmployee"
+            @loadData="loadData"
             :data="employee"
         />
 
@@ -58,7 +60,7 @@
                 <button
                     title="Ctrl E"
                     class="m-btn__icon"
-                    @click="updateEmployee()"
+                    @click="btnUpdateClick()"
                 >
                     <div class="m-icon m-icon--view"></div>
                     <span>Xem</span>
@@ -67,7 +69,7 @@
                     title="Ctrl E"
                     class="m-btn__icon"
                     id="btnUpdate"
-                    @click="updateEmployee()"
+                    @click="btnUpdateClick()"
                 >
                     <div class="m-icon m-icon--update"></div>
                     <span>Sửa</span>
@@ -75,7 +77,7 @@
                 <button
                     title="Ctrl D"
                     class="m-btn__icon"
-                    @click="deleteEmployee()"
+                    @click="btnDeleteClick()"
                 >
                     <div class="m-icon m-icon--delete"></div>
                     <span>Xóa</span>
@@ -520,11 +522,21 @@ export default {
 
             return `${day}/${month}/${year}`
         },
+        updateEmployee(employee, employeeId) {
+            var index = this.employees.findIndex((e) => {
+                return e.EmployeeId == employeeId
+            })
+            this.employees = [
+                ...this.employees.slice(0, index),
+                employee,
+                ...this.employees.slice(index + 1),
+            ]
+        },
         /**
          * Hàm sửa thông tin nhân viên
          * CreatedBy: TLKhanh(19/2/2021)
          */
-        async updateEmployee() {
+        async btnUpdateClick() {
             var rowSelected = document.querySelector('.row-selected')
 
             if (!rowSelected) {
@@ -565,7 +577,7 @@ export default {
          * Hàm xóa nhân viên
          * CreatedBy: TLKhanh(19/2/2021)
          */
-        async deleteEmployee() {
+        async btnDeleteClick() {
             var rowSelected = document.querySelector('.row-selected')
             if (!rowSelected) {
                 alert('Vui lòng chọn nhân viên để xóa!')
@@ -606,7 +618,7 @@ export default {
             if (e.key == 'd' && e.ctrlKey) {
                 e.preventDefault()
                 if (!this.isHideParent) return
-                this.deleteEmployee()
+                this.btnDeleteClick()
             }
 
             /**
@@ -614,7 +626,7 @@ export default {
              */
             if (e.key == 'e' && e.ctrlKey) {
                 e.preventDefault()
-                this.updateEmployee()
+                this.btnUpdateClick()
             }
             /**
              *di chuyên row selected bằng mũi tên lên xuống
@@ -628,10 +640,9 @@ export default {
                 // Vị trí của row được chọn
                 let currentIndex = rowSelected.rowIndex
                 // nếu đang ở đầu thì không làm gì cả
-                if (currentIndex == 0) return
+                if (currentIndex == 1) return
                 // nếu khác vị trí đầu thì sẽ chuyển selected lên dòng đằng trước
-                let prevRow = gridContent.children[currentIndex - 1]
-
+                let prevRow = gridContent.children[currentIndex - 2]
                 rowSelected.classList.remove('row-selected')
                 prevRow.classList.add('row-selected')
             }
@@ -645,7 +656,7 @@ export default {
                 // nếu đang ở cuối thì không làm gì cả
                 if (currentIndex == gridContent.children.length - 1) return
                 // nếu khác vị trí cuối thì sẽ chuyển selected xuống dòng đằng sau
-                let nextRow = gridContent.children[currentIndex + 1]
+                let nextRow = gridContent.children[currentIndex]
                 rowSelected.classList.remove('row-selected')
                 nextRow.classList.add('row-selected')
             }
