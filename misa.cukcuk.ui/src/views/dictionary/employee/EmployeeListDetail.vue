@@ -19,15 +19,15 @@
             <div class="m-icon m-icon--save"></div>
             <span>Cất</span>
           </button>
-          <button class="m-btn__icon">
+          <button class="m-btn__icon isDisabled">
             <div class="m-icon m-icon--duplicate"></div>
             <span>Nhân bản</span>
           </button>
-          <button :class="{ isDisabled: isDisabled }" class="m-btn__icon">
+          <button class="m-btn__icon isDisabled">
             <div class="m-icon m-icon--view"></div>
             <span>Xem</span>
           </button>
-          <button title="Ctrl + S" class="m-btn__icon" @click="saveEmployee">
+          <button class="m-btn__icon isDisabled">
             <div class="m-icon m-icon--update"></div>
             <span>Sửa</span>
           </button>
@@ -35,11 +35,11 @@
             <div class="m-icon m-icon--delete"></div>
             <span>Xóa</span>
           </button>
-          <button class="m-btn__icon">
+          <button class="m-btn__icon isDisabled">
             <div class="m-icon m-icon--inner"></div>
             <span>Nạp</span>
           </button>
-          <button class="m-btn__icon">
+          <button class="m-btn__icon isDisabled">
             <div class="m-icon m-icon--help"></div>
             <span>Giúp</span>
           </button>
@@ -518,9 +518,6 @@ export default {
     employee() {
       return this.data;
     },
-    isDisabled() {
-      return !(this.employeeId != "");
-    },
   },
 };
 </script>
@@ -528,12 +525,5 @@ export default {
 <style scoped>
 .isHide {
   display: none;
-}
-.isDisabled {
-  opacity: 0.2 !important;
-  cursor: default !important;
-}
-.isDisabled:hover {
-  border-color: transparent !important;
 }
 </style>

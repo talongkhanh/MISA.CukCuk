@@ -51,7 +51,7 @@
           <div class="m-icon m-icon--add"></div>
           <span>Thêm</span>
         </button>
-        <button class="m-btn__icon">
+        <button class="m-btn__icon isDisabled">
           <div class="m-icon m-icon--duplicate"></div>
           <span>Nhân bản</span>
         </button>
@@ -72,11 +72,11 @@
           <div class="m-icon m-icon--delete"></div>
           <span>Xóa</span>
         </button>
-        <button class="m-btn__icon">
+        <button class="m-btn__icon" @click="loadData">
           <div class="m-icon m-icon--inner"></div>
           <span>Nạp</span>
         </button>
-        <button class="m-btn__icon">
+        <button class="m-btn__icon isDisabled">
           <div class="m-icon m-icon--help"></div>
           <span>Giúp</span>
         </button>
