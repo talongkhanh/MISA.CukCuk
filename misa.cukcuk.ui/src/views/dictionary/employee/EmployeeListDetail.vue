@@ -285,6 +285,8 @@ export default {
           (keyCode >= 48 && keyCode <= 57) ||
           keyCode == 8 ||
           keyCode == 9 ||
+          keyCode == 37 ||
+          keyCode == 39 ||
           keyCode == 46 ||
           (keyCode >= 96 && keyCode <= 105)
         )
@@ -420,7 +422,9 @@ export default {
 
           this.$emit("loadData");
         } catch (error) {
-          console.log(error);
+          this.text = error.response.data.UserMsg;
+          this.isHideDialogAlert = false;
+          this.focusButton();
         }
       }
     },
