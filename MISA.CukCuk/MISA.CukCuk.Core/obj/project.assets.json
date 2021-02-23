@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\longk\\.nuget\\packages\\": {}
+    "C:\\Users\\tlkhanh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\HocTapMISA\\Khanh\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj",
+      "projectUniqueName": "C:\\tlkhanh\\MISA.CukCuk\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj",
       "projectName": "MISA.CukCuk.Core",
-      "projectPath": "D:\\HocTapMISA\\Khanh\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj",
-      "packagesPath": "C:\\Users\\longk\\.nuget\\packages\\",
-      "outputPath": "D:\\HocTapMISA\\Khanh\\MISA.CukCuk\\MISA.CukCuk.Core\\obj\\",
+      "projectPath": "C:\\tlkhanh\\MISA.CukCuk\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj",
+      "packagesPath": "C:\\Users\\tlkhanh\\.nuget\\packages\\",
+      "outputPath": "C:\\tlkhanh\\MISA.CukCuk\\MISA.CukCuk\\MISA.CukCuk.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\longk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tlkhanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
