@@ -380,7 +380,7 @@ export default {
          * CreatedBy: TLKhanh(19/2/2021)
          */
         btnCancelClick() {
-            this.$emit('closePopup', true)
+            this.$emit('closeDialog', true)
             this.removeValidate()
         },
         /**
@@ -390,6 +390,7 @@ export default {
          */
         async deleteEmployee() {
             var employeeId = this.employee.EmployeeId
+            if (!employeeId) return
             var employeeCode = this.employee.EmployeeCode
             try {
                 this.isHideDialogConfirm = false
@@ -437,7 +438,7 @@ export default {
                         'http://localhost:52690/api/v1/Employees',
                         this.employee
                     )
-                    this.$emit('closePopup', true)
+                    this.$emit('closeDialog', true)
                     this.$emit('loadNewEmployee')
                     // load lại dữ liệu khi thêm mới xong
                     this.$emit('loadData')
@@ -468,7 +469,7 @@ export default {
          * CreatedBy: TLKhanh(19/2/2021)
          */
         closeDialog(value) {
-            this.$emit('closePopup', value)
+            this.$emit('closeDialog', value)
         },
     },
     data() {
@@ -525,7 +526,7 @@ export default {
              */
             if (e.key == 'q' && e.ctrlKey) {
                 e.preventDefault()
-                this.$emit('closePopup', true)
+                this.$emit('closeDialog', true)
                 this.removeValidate()
             }
             /**

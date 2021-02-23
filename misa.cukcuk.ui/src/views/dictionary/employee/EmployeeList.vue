@@ -3,7 +3,7 @@
         <EmployeeListDetail
             ref="dialog"
             id="m"
-            @closePopup="closePopup"
+            @closeDialog="closeDialog"
             :isHide="isHideParent"
             @onEmployeeDelete="onEmployeeDelete"
             @loadNewEmployee="loadNewEmployee"
@@ -423,7 +423,7 @@ export default {
             }
         },
         // hàm đóng dialog
-        closePopup(value) {
+        closeDialog(value) {
             this.isHideParent = value
         },
         /**
