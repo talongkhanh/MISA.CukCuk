@@ -82,7 +82,8 @@
         </button>
       </div>
       <div class="grid">
-        <div class="grid__overflow">
+        <div class="grid__content">
+          <!-- <div class="grid__overflow">
           <div class="grid__header">
             <div class="grid__header__item">
               <div class="grid__header-title">Tên đăng nhập</div>
@@ -154,7 +155,86 @@
               </tr>
             </tbody>
           </table>
+        </div> -->
+
+          <table>
+            <thead class="grid__header">
+              <tr>
+                <td>
+                  <div class="grid__header-title">Tên đăng nhập</div>
+                  <div class="grid__header-filter">
+                    <button class="grid__header-split">*</button>
+                    <input type="text" class="grid__header-textbox" />
+                  </div>
+                </td>
+                <td>
+                  <div class="grid__header-title">Tên nhân viên</div>
+                  <div class="grid__header-filter">
+                    <button class="grid__header-split">*</button>
+                    <input type="text" class="grid__header-textbox" />
+                  </div>
+                </td>
+                <td>
+                  <div class="grid__header-title">Số điện thoại</div>
+                  <div class="grid__header-filter">
+                    <button class="grid__header-split">*</button>
+                    <input type="text" class="grid__header-textbox" />
+                  </div>
+                </td>
+                <td>
+                  <div class="grid__header-title">giới tính</div>
+                  <div class="grid__header-filter">
+                    <button class="grid__header-split">*</button>
+                    <input type="text" class="grid__header-textbox" />
+                  </div>
+                </td>
+                <td>
+                  <div class="grid__header-title mr-12px">
+                    Ngày sinh
+                  </div>
+                  <div class="grid__header-filter">
+                    <button class="grid__header-split">*</button>
+                    <input type="date" class="grid__header-textbox" />
+                  </div>
+                </td>
+                <td>
+                  <div class="grid__header-title">
+                    Trạng thái làm việc
+                  </div>
+                  <div class="grid__header-filter">
+                    <button class="grid__header-split">*</button>
+                    <input type="text" class="grid__header-textbox" />
+                  </div>
+                </td>
+              </tr>
+            </thead>
+            <tbody ref="gridContent">
+              <tr
+                class="grid__cell"
+                v-for="employee in employees"
+                :key="employee.EmployeeId"
+                @click="tableRowClick"
+                @dblclick="rowDoubleClick(employee)"
+                :data-id="employee.EmployeeId"
+                :data-code="employee.EmployeeCode"
+              >
+                <td class="grid__column">
+                  {{ employee.EmployeeCode }}
+                </td>
+                <td class="grid__column">{{ employee.FullName }}</td>
+                <td class="grid__column">{{ employee.PhoneNumber }}</td>
+                <td class="grid__column">
+                  {{ formatGender(employee.Gender) }}
+                </td>
+                <td class="grid__column">
+                  {{ formatDate(employee.DateOfBirth) }}
+                </td>
+                <td class="grid__column">{{ employee.WorkStatusName }}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+
         <div class="grid__paging">
           <div class="paging__btn">
             <div class="paging__icon icon__first-page"></div>

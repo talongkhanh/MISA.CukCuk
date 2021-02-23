@@ -443,8 +443,8 @@ export default {
   data() {
     return {
       workStatuses: [],
-      employeeId: "",
       message: "",
+      employeeId: "",
       rules: [],
       isHideDialogAlert: true,
       isHideDialogConfirm: true,

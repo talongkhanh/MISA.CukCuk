@@ -1,23 +1,33 @@
 .grid {
   width: 100%;
-  height: 100%;
   background: #eee;
-  height: calc(100% - 28px);
+  height: calc(100% - 26px);
 }
 
-.grid__overflow {
-  width: 100%;
-  height: calc(100% - 28px);
+tbody {
+  height: calc(100% - 56px);
+}
+
+// thead {
+//   position: sticky;
+// }
+
+thead tr td {
+  background-color: #ededed;
+  top: -1px;
+  position: sticky;
+  position: -webkit-sticky;
+}
+
+.grid__content {
   overflow: auto;
-  overflow-y: hidden;
+  width: 100%;
+  height: calc(100% - 26px);
 }
 
 .grid__header {
-  min-width: 900px;
   height: 56px;
-  display: flex;
   border: 1px solid #ccc;
-  border-right-color: transparent;
 }
 
 .grid__header__item {
@@ -64,72 +74,17 @@
   border-color: #0072bc;
 }
 
-.grid__header__track {
-  width: 17px;
-}
-
-.grid__body {
-  width: 100%;
-  height: calc(100% - 56px);
-}
-
-.grid__body tbody {
-  min-width: 900px;
-  width: 100%;
-  display: block;
-  overflow: auto;
-  height: 100% !important;
-}
-
-.grid__body tbody tr {
-  width: 100%;
-  display: flex;
-  border: 1px solid #ccc;
-  border-bottom-color: transparent;
-  border-right-color: transparent;
-}
-
-.grid__body tbody tr:hover {
+tbody tr:hover {
   background-color: #d7e9f4;
-}
-
-.grid__body tbody tr:first-child {
-  border-top-color: transparent;
-}
-
-.grid__body tbody tr:last-child {
-  border-bottom-color: #ccc;
-}
-
-.grid__body tbody tr td {
-  flex: 1;
-  border-right: 1px solid #ccc;
-  display: flex;
-  align-items: center;
-}
-
-.flex-2 {
-  flex: 2 !important;
-}
-
-.flex-3 {
-  flex: 3 !important;
-}
-
-.flex-4 {
-  flex: 4 !important;
-}
-
-.flex-5 {
-  flex: 5 !important;
 }
 
 table {
   width: 100%;
+  max-height: 100%;
   border-collapse: collapse;
 }
 
-tr {
+.grid__cell {
   height: 24px;
 }
 
@@ -138,6 +93,28 @@ tr:nth-child(odd) {
   // background-color: #c1ddf1;
 }
 
-td {
+.grid__column {
   padding-left: 12px;
+}
+
+.grid__column:nth-child(1) {
+  width: 200px !important;
+}
+
+.grid__column:nth-child(3) {
+  width: 150px !important;
+}
+.grid__column:nth-child(4) {
+  width: 130px !important;
+}
+.grid__column:nth-child(5) {
+  width: 100px !important;
+}
+.grid__column:nth-child(6) {
+  width: 150px !important;
+}
+
+tr,
+td {
+  border: 1px solid #ccc;
 }
