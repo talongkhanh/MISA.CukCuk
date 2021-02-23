@@ -7,7 +7,6 @@
             :isHide="isHideParent"
             @onEmployeeDelete="onEmployeeDelete"
             @loadNewEmployee="loadNewEmployee"
-            @updateEmployee="updateEmployee"
             @loadData="loadData"
             :data="employee"
         />
@@ -521,16 +520,6 @@ export default {
             var year = date.getFullYear()
 
             return `${day}/${month}/${year}`
-        },
-        updateEmployee(employee, employeeId) {
-            var index = this.employees.findIndex((e) => {
-                return e.EmployeeId == employeeId
-            })
-            this.employees = [
-                ...this.employees.slice(0, index),
-                employee,
-                ...this.employees.slice(index + 1),
-            ]
         },
         /**
          * Hàm sửa thông tin nhân viên
