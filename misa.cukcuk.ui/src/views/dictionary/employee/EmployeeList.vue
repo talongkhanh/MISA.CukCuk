@@ -246,6 +246,10 @@ export default {
         // Xử lý slect row đầu tiên
         setTimeout(() => {
           var tbody = document.querySelector("tbody");
+          var row = document.querySelector(".row-selected");
+          if (row) {
+            row.classList.remove("row-selected");
+          }
           tbody.firstChild.classList.add("row-selected");
         }, 0);
       } catch (error) {
