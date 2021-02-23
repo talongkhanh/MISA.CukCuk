@@ -11,7 +11,7 @@
       <div class="dialog-body">
         <div class="toolbar">
           <button
-            title="Ctrl + S"
+            title="Ctrl S"
             id="btnSave"
             class="m-btn__icon"
             @click="saveEmployee"
@@ -31,7 +31,7 @@
             <div class="m-icon m-icon--update"></div>
             <span>Sửa</span>
           </button>
-          <button title="Ctrl + D" class="m-btn__icon" @click="deleteEmployee">
+          <button title="Ctrl D" class="m-btn__icon" @click="deleteEmployee">
             <div class="m-icon m-icon--delete"></div>
             <span>Xóa</span>
           </button>
@@ -42,6 +42,10 @@
           <button class="m-btn__icon isDisabled">
             <div class="m-icon m-icon--help"></div>
             <span>Giúp</span>
+          </button>
+          <button title="Ctr Q" class="m-btn__icon" @click="btnCancelClick">
+            <div class="m-icon m-icon--close"></div>
+            <span>Đóng</span>
           </button>
         </div>
         <div class="title-group">Thông tin chung</div>
