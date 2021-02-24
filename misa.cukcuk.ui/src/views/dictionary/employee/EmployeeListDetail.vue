@@ -18,6 +18,7 @@
                         title="Ctrl S"
                         id="btnSave"
                         class="m-btn__icon"
+                        :class="{ isDisabled: !saving }"
                         @click="saveEmployee"
                     >
                         <div class="m-icon m-icon--save"></div>
@@ -31,13 +32,18 @@
                         <div class="m-icon m-icon--view"></div>
                         <span>Xem</span>
                     </button>
-                    <button class="m-btn__icon isDisabled">
+                    <button
+                        class="m-btn__icon"
+                        :class="{ isDisabled: !editing }"
+                        @click="btnEditClick"
+                    >
                         <div class="m-icon m-icon--update"></div>
                         <span>Sửa</span>
                     </button>
                     <button
                         title="Ctrl D"
                         class="m-btn__icon"
+                        :class="{ isDisabled: !deleting }"
                         @click="deleteEmployee"
                     >
                         <div class="m-icon m-icon--delete"></div>
@@ -297,6 +303,19 @@ export default {
             type: Object,
             default: () => {},
         },
+        isDelete: {
+            type: Boolean,
+            default: false,
+        },
+        isEdit: {
+            type: Boolean,
+            default: false,
+        },
+
+        isSave: {
+            type: Boolean,
+            default: false,
+        },
     },
     methods: {
         /**
@@ -429,7 +448,6 @@ export default {
                         this.employee
                     )
                     this.$emit('closeDialog', true)
-                    this.$emit('loadNewEmployee')
                     //thông báo toat
                     this.$toast('Thêm nhân viên thành công!', {
                         position: 'top-right',
@@ -490,6 +508,12 @@ export default {
          */
         closeDialog(value) {
             this.$emit('closeDialog', value)
+        },
+        /**
+         * chuyển sang form sửa khi click nút sửa
+         */
+        btnEditClick() {
+            this.$emit('onBtnChildEditClick')
         },
     },
     data() {
@@ -573,6 +597,16 @@ export default {
     computed: {
         employee() {
             return this.data
+        },
+        editing() {
+            return this.isEdit
+        },
+        deleting() {
+            return this.isDelete
+        },
+
+        saving() {
+            return this.isSave
         },
     },
 }

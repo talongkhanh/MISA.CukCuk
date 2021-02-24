@@ -4,11 +4,14 @@
             ref="dialog"
             id="m"
             @closeDialog="closeDialog"
-            :isHide="isHideParent"
             @onEmployeeDelete="onEmployeeDelete"
-            @loadNewEmployee="loadNewEmployee"
             @loadData="loadData"
+            @onBtnChildEditClick="onBtnChildEditClick"
+            :isHide="isHideParent"
             :data="employee"
+            :isEdit="isEdit"
+            :isDelete="isDelete"
+            :isSave="isSave"
         />
 
         <div class="employee-list__header">
@@ -57,9 +60,9 @@
                     <span>Nhân bản</span>
                 </button>
                 <button
-                    title="Ctrl E"
+                    title="Ctrl V"
                     class="m-btn__icon"
-                    @click="btnUpdateClick()"
+                    @click="btnViewClick()"
                 >
                     <div class="m-icon m-icon--view"></div>
                     <span>Xem</span>
@@ -92,80 +95,6 @@
             </div>
             <div class="grid">
                 <div class="grid__content">
-                    <!-- <div class="grid__overflow">
-          <div class="grid__header">
-            <div class="grid__header__item">
-              <div class="grid__header-title">Tên đăng nhập</div>
-              <div class="grid__header-filter">
-                <button class="grid__header-split">*</button>
-                <input type="text" class="grid__header-textbox" />
-              </div>
-            </div>
-            <div class="grid__header__item flex-2">
-              <div class="grid__header-title">Tên nhân viên</div>
-              <div class="grid__header-filter">
-                <button class="grid__header-split">*</button>
-                <input type="text" class="grid__header-textbox" />
-              </div>
-            </div>
-            <div class="grid__header__item">
-              <div class="grid__header-title">Số điện thoại</div>
-              <div class="grid__header-filter">
-                <button class="grid__header-split">*</button>
-                <input type="text" class="grid__header-textbox" />
-              </div>
-            </div>
-            <div class="grid__header__item">
-              <div class="grid__header-title">giới tính</div>
-              <div class="grid__header-filter">
-                <button class="grid__header-split">*</button>
-                <input type="text" class="grid__header-textbox" />
-              </div>
-            </div>
-            <div class="grid__header__item">
-              <div class="grid__header-title mr-12px">
-                Ngày sinh
-              </div>
-              <div class="grid__header-filter">
-                <button class="grid__header-split">*</button>
-                <input type="date" class="grid__header-textbox" />
-              </div>
-            </div>
-
-            <div class="grid__header__item">
-              <div class="grid__header-title">
-                Trạng thái làm việc
-              </div>
-              <div class="grid__header-filter">
-                <button class="grid__header-split">*</button>
-                <input type="text" class="grid__header-textbox" />
-              </div>
-            </div>
-            <div class="grid__header__track"></div>
-          </div>
-          <table class="grid__body">
-            <tbody ref="gridContent">
-              <tr
-                v-for="employee in employees"
-                :key="employee.EmployeeId"
-                @click="tableRowClick"
-                @dblclick="rowDoubleClick(employee)"
-                :data-id="employee.EmployeeId"
-                :data-code="employee.EmployeeCode"
-              >
-                <td>
-                  {{ employee.EmployeeCode }}
-                </td>
-                <td class="flex-2">{{ employee.FullName }}</td>
-                <td>{{ employee.PhoneNumber }}</td>
-                <td>{{ formatGender(employee.Gender) }}</td>
-                <td>{{ formatDate(employee.DateOfBirth) }}</td>
-                <td>{{ employee.WorkStatusName }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div> -->
-
                     <table id="tblEmployee">
                         <thead class="grid__header">
                             <tr>
@@ -353,6 +282,9 @@ export default {
             employeeId: '',
             workStatuses: [],
             newCode: '',
+            isEdit: false,
+            isDelete: false,
+            isSave: false,
         }
     },
     methods: {
@@ -431,6 +363,9 @@ export default {
          */
         async btnAddClick() {
             try {
+                this.isDelete = false
+                this.isEdit = false
+                this.isSave = true
                 var response = await axios.get(
                     'http://localhost:52690/api/v1/Employees/max-code'
                 )
@@ -526,10 +461,12 @@ export default {
          * CreatedBy: TLKhanh(19/2/2021)
          */
         async btnUpdateClick() {
+            this.isDelete = true
+            this.isSave = true
+            this.isEdit = false
             var rowSelected = document.querySelector('.row-selected')
 
             if (!rowSelected) {
-                alert('Vui lòng chọn nhân viên để sửa!')
                 return
             }
 
@@ -555,6 +492,16 @@ export default {
             this.focusInput()
         },
         /**
+         * Xem nhân viên
+         * khi xem nhân viên thì được sửa
+         */
+        btnViewClick() {
+            this.btnUpdateClick()
+            this.isDelete = false
+            this.isEdit = true
+            this.isSave = false
+        },
+        /**
          * update lại danh sách khi xóa
          */
         onEmployeeDelete(employeeId) {
@@ -575,6 +522,15 @@ export default {
             this.employees = this.employees.filter(
                 (employee) => employee.EmployeeId != employeeId
             )
+        },
+        /**
+         * chỉnh lại disable các nut form con khi form con nhấn nút sửa
+         */
+        onBtnChildEditClick() {
+            this.isDelete = true
+            this.isSave = true
+            this.isEdit = false
+            this.focusInput()
         },
         /**
          * Hàm xóa nhân viên
@@ -625,12 +581,21 @@ export default {
             }
 
             /**
-             * ctr E để xem nhân viên
+             * ctr E để sửa nhân viên
              */
             if (e.key == 'e' && e.ctrlKey) {
                 e.preventDefault()
                 this.btnUpdateClick()
             }
+
+            /**
+             * ctr V để xem nhân viên
+             */
+            if (e.key == 'v' && e.ctrlKey) {
+                e.preventDefault()
+                this.btnViewClick()
+            }
+
             /**
              *di chuyên row selected bằng mũi tên lên xuống
              CreatedBy: TLKhanh(21/2/2021)
