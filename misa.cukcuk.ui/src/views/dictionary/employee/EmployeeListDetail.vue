@@ -460,7 +460,7 @@ export default {
                         this.employee
                     )
                     //thông báo toat
-                    this.$toast('Xóa nhân viên thành công!', {
+                    this.$toast('Cập nhật thông tin nhân viên thành công!', {
                         position: 'top-right',
                         timeout: 2000,
                         closeOnClick: true,
