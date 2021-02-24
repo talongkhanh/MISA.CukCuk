@@ -16,13 +16,24 @@ namespace MISA.CukCuk.Controllers
         #region Declare
         IBaseService<T> _baseService;
         #endregion
+        #region Constructor
 
-        #region Method
-        // GET: api/v1/<Controller>
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="baseService">Base service</param>
         public BaseController(IBaseService<T> baseService)
         {
             _baseService = baseService;
         }
+        #endregion
+
+        #region Method
+        // GET: api/v1/<Controller>
+        /// <summary>
+        /// Lấy tất cả các bản ghi
+        /// </summary>
+        /// <returns>Tất cả các bản ghi và status code tương ứng</returns>
         [HttpGet]
         public virtual IActionResult Get()
         {
@@ -31,6 +42,11 @@ namespace MISA.CukCuk.Controllers
         }
 
         // GET: api/v1/<Controller>/5
+        /// <summary>
+        /// Lấy về bản ghi theo id truyền vào
+        /// </summary>
+        /// <param name="id">id của bản ghi cần lấy</param>
+        /// <returns>Bản ghi phù hợp với id và status code tương ứng</returns>
         [HttpGet("{id}")]
         public IActionResult Get(string id)
         {
@@ -39,6 +55,11 @@ namespace MISA.CukCuk.Controllers
         }
 
         // POST: api/v1/<Controller>
+        /// <summary>
+        /// Thêm mới một bản ghi
+        /// </summary>
+        /// <param name="entity">Bản ghi cần thêm mới</param>
+        /// <returns>Số dòng của db bị ảnh hưởng và status code</returns>
         [HttpPost]
         public IActionResult Post([FromBody] T entity)
         {
@@ -47,6 +68,12 @@ namespace MISA.CukCuk.Controllers
         }
 
         // PUT: api/v1/<Controller>/5
+        /// <summary>
+        /// Cập nhật thông tin một bản ghi
+        /// </summary>
+        /// <param name="id">id của bản ghi cần cập nhật</param>
+        /// <param name="entity">Bản ghi thay thế</param>
+        /// <returns>số dòng bị ảnh hưởng và status code tương ứng</returns>
         [HttpPut("{id}")]
         public IActionResult Put(string id, [FromBody] T entity)
         {
@@ -55,6 +82,11 @@ namespace MISA.CukCuk.Controllers
         }
 
         // DELETE: api/v1/<Controller>/5
+        /// <summary>
+        /// Xóa một bản ghi
+        /// </summary>
+        /// <param name="id">id của bản ghi cần xóa</param>
+        /// <returns>số dòng bị ảnh hưởng và status code tương ứng</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(string id)
         {

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MISA.CukCuk.Core.Entities
 {
-    public class Employee
+    public class Employee : BaseEntity
     {
         #region Properties
         /// <summary>
@@ -65,10 +65,6 @@ namespace MISA.CukCuk.Core.Entities
         /// </summary>
         public string WorkStatusName { get; set; }
 
-        /// <summary>
-        /// Mức lương
-        /// </summary>
-        public Double? Salary { get; set; }
         #endregion
 
     }

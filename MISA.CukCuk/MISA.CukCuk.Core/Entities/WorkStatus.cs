@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MISA.CukCuk.Core.Entities
 {
-    public class WorkStatus
+    public class WorkStatus : BaseEntity
     {
         /// <summary>
         /// Khóa chính

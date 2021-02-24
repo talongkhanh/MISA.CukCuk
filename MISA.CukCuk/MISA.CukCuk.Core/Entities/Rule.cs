@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MISA.CukCuk.Core.Entities
 {
-    public class Rule
+    public class Rule : BaseEntity
     {
         /// <summary>
         /// khóa chính
