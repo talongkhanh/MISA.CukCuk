@@ -558,6 +558,20 @@ export default {
          * update lại danh sách khi xóa
          */
         onEmployeeDelete(employeeId) {
+            this.$toast('Xóa nhân viên thành công!', {
+                position: 'top-right',
+                timeout: 2000,
+                closeOnClick: true,
+                pauseOnFocusLoss: true,
+                pauseOnHover: true,
+                draggable: true,
+                draggablePercent: 0.6,
+                showCloseButtonOnHover: false,
+                hideProgressBar: true,
+                closeButton: 'button',
+                icon: true,
+                rtl: false,
+            })
             this.employees = this.employees.filter(
                 (employee) => employee.EmployeeId != employeeId
             )

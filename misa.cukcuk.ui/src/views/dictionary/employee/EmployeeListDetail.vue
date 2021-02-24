@@ -430,6 +430,21 @@ export default {
                     )
                     this.$emit('closeDialog', true)
                     this.$emit('loadNewEmployee')
+                    //thông báo toat
+                    this.$toast('Thêm nhân viên thành công!', {
+                        position: 'top-right',
+                        timeout: 2000,
+                        closeOnClick: true,
+                        pauseOnFocusLoss: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        draggablePercent: 0.6,
+                        showCloseButtonOnHover: false,
+                        hideProgressBar: true,
+                        closeButton: 'button',
+                        icon: true,
+                        rtl: false,
+                    })
                     // load lại dữ liệu khi thêm mới xong
                     this.$emit('loadData')
                 } catch (error) {
@@ -444,7 +459,22 @@ export default {
                         `http://localhost:52690/api/v1/Employees/${employeeId}`,
                         this.employee
                     )
-                    alert('Cập nhật thông tin thành công!')
+                    //thông báo toat
+                    this.$toast('Xóa nhân viên thành công!', {
+                        position: 'top-right',
+                        timeout: 2000,
+                        closeOnClick: true,
+                        pauseOnFocusLoss: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        draggablePercent: 0.6,
+                        showCloseButtonOnHover: false,
+                        hideProgressBar: true,
+                        closeButton: 'button',
+                        icon: true,
+                        rtl: false,
+                    })
+                    // load lại dữ liệu
 
                     this.$emit('loadData')
                 } catch (error) {
